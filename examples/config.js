@@ -9,31 +9,27 @@ if (env.error) {
 }
 
 module.exports = {
-    network: process.env.NETWORK || 'testnet',
+    network: process.env.NETWORK || 'mainnet',
     configuration: {
-        0: {
-            rpc: process.env.NETWORK_0_RPC || 'https://rpc.sepolia.org',
-            bridgeAddress: process.env.NETWORK_0_BRIDGE || '0x528e26b25a34a4A5d0dbDa1d57D318153d2ED582',
-            bridgeExtensionAddress: process.env.NETWORK_0_BRIDGE_EXTENSION || '0x2311BFA86Ae27FC10E1ad3f805A2F9d22Fc8a6a1',
-            wrapperAddress: process.env.NETWORK_0_WRAPPER || '0x0f04f8434bac2e1db8fca8a34d3e177b6c7ccaba',
-
+        196: {  // X Layer
+            rpc: process.env.NETWORK_196_RPC || 'https://xlayerrpc.okx.com',
+            bridgeAddress: process.env.NETWORK_196_BRIDGE || '0x2a3DD3EB832aF982ec71669E178424b10Dca2EDe',
+            bridgeExtensionAddress: process.env.NETWORK_196_BRIDGE_EXTENSION || '0x64B20Eb25AEd030FD510EF93B9135278B152f6a6',
             isEIP1559Supported: true
         },
-        1: {
-            rpc: process.env.NETWORK_1_RPC || 'https://rpc.cardona.zkevm-rpc.com',
-            bridgeAddress: process.env.NETWORK_1_BRIDGE || '0x528e26b25a34a4A5d0dbDa1d57D318153d2ED582',
-            bridgeExtensionAddress: process.env.NETWORK_1_BRIDGE_EXTENSION || '0x2311BFA86Ae27FC10E1ad3f805A2F9d22Fc8a6a1',
+        1101: {  // Polygon zkEVM
+            rpc: process.env.NETWORK_1101_RPC || 'https://zkevm-rpc.com',
+            bridgeAddress: process.env.NETWORK_1101_BRIDGE || '0x2a3DD3EB832aF982ec71669E178424b10Dca2EDe',
+            bridgeExtensionAddress: process.env.NETWORK_1101_BRIDGE_EXTENSION || '0x64B20Eb25AEd030FD510EF93B9135278B152f6a6',
             isEIP1559Supported: true
         },
     },
     tokens: {
-        0: {
-            ether: '0x0000000000000000000000000000000000000000',
-            erc20: '0x3fd0A53F4Bf853985a95F4Eb3F9C9FDE1F8e2b53' // MATIC
+        196: {
+            eth: '0x0000000000000000000000000000000000000000'
         },
-        1: {
-            ether: '0x0000000000000000000000000000000000000000',
-            erc20: '0x3cc6055f4e88638c46daa9cf5f5fc54a801e5f03' // MATIC
+        1101: {
+            eth: '0x0000000000000000000000000000000000000000'
         }
     },
     user1: {
