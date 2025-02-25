@@ -2,11 +2,11 @@ const { getLxLyClient, tokens, configuration, from, to } = require('../../utils_
 
 const execute = async () => {
     const client = await getLxLyClient();
-    
+
     const bridgeTransactionHash = "0xdb79ee3b309571d741f6ad59cc8f06efd5cb3654aa805d54bfa5d4d731cb7c71";
     const sourceNetworkId = 196;    // X Layer
     const destinationNetworkId = 1101;  // Polygon zkEVM
-    
+
     try {
         // Get the bridge transaction data first
         console.log("Getting bridge transaction data...");
@@ -56,7 +56,7 @@ const execute = async () => {
 
         const txHash = await result.getTransactionHash();
         console.log("Claim transaction hash:", txHash);
-        
+
         const receipt = await result.getReceipt();
         console.log("Claim receipt:", receipt);
 

@@ -1,66 +1,126 @@
-# Example
+# X Layer Bridge Examples
 
-This folder contains different examples for different cases. All examples are nodejs scripts, so can be easily run by `node` command.
+This repository contains example implementations for using X Layer's bridging capabilities. These NodeJS scripts demonstrate how to bridge assets between X Layer and other networks like zkEVM.
 
-## How to use
+## Overview
 
-### 1. Set configuration
+X Layer is a cutting-edge Ethereum layer 2 (L2) solution offering full EVM compatibility with significantly lower fees and higher throughput. These examples showcase our bridge functionality, enabling seamless asset transfers across our ecosystem.
 
-You need to configure your environment variables now. Copy `.env.example` and rename as `.env`. Now provide values for the keys mentioned there.
+## Key Examples
 
-There are some prefilled data in `config.js` but feel free to change anything as per your needs.
+- `examples/lxly/bridge_and_call/xlayer_to_zkevm.js` - Bridge assets from X Layer to zkEVM
+- `examples/lxly/bridge_and_call/xlayer_to_zkevm_claim.js` - Claim bridged assets on zkEVM
 
+## Getting Started
 
-**Note:** - Be careful with your private key, Use a key you are comfortable with for development purposes. And try not to make it public by doing actions such as committing to repo or referencing on any online site.
+### 1. Configure Your Environment
 
-### 2. Install package
+First, set up your environment variables:
 
-install related package by running command -
+1. Copy `.env.example` to `.env`
+2. Fill in your configuration values:
 
 ```
+# USER 1 DETAILS
+USER1_PRIVATE_KEY=
+USER1_FROM=
+
+# USER 2 DETAILS
+USER2_FROM=
+USER2_PRIVATE_KEY=
+
+# NETWORK
+NETWORK=mainnet
+
+# X Layer (196)
+NETWORK_196_RPC=
+NETWORK_196_BRIDGE=
+NETWORK_196_BRIDGE_EXTENSION=
+
+# zkEVM (1101)
+NETWORK_1101_RPC=
+NETWORK_1101_BRIDGE=
+NETWORK_1101_BRIDGE_EXTENSION=
+```
+
+**IMPORTANT:** Be careful with your private keys. Use test accounts for development purposes and never commit private keys to repositories or share them publicly.
+
+### 2. Install Dependencies
+
+Install the required dependencies:
+
+```bash
 npm i
 ```
 
-**Note:-** Make sure you are inside examples folder.
+**Note:** Make sure you're in the examples folder when running this command.
 
-### 3. Run script
+### 3. Run the Examples
 
-run any example script by using
+Execute any example script using:
 
-```
+```bash
 node <file_path>
 ```
 
-let's run a erc20 balance example
+For example, to run the `xlayer_to_zkevm.js` script:
 
+```bash
+node lxly/bridge_and_call/xlayer_to_zkevm.js
 ```
-node lxly/erc20/balance.js
-```
 
-## Run example using source code
+## X Layer Bridge Architecture
 
-This section helps you to run the example code with current source code. Generally it is needed for debugging purpose.
+Our bridge implementation leverages X Layer's zkEVM validium architecture to provide:
 
-### 1. Build & link source code
+- Ultra-fast bridging between networks
+- Significantly lower costs compared to other bridge solutions
+- Seamless integration with the broader Polygon ecosystem
+- Enhanced security through ZK proofs
+- Simplified developer experience with our `getLxLyClient` utility
 
-Run the below command inside root of this project.
+## Advanced Usage: Running with Source Code
 
-```
+For developers who want to use the examples with the current source code (helpful for debugging):
+
+### 1. Build & Link Source Code
+
+From the root of the project, run:
+
+```bash
 npm run build:link
 ```
 
-You might get permission issue, in this case run the command using `sudo`.
+You might need to use `sudo` if you encounter permission issues.
 
-### 2. Link the library
+### 2. Link the Library
 
-#### 2.1 Move into examples folder
-
-```
+```bash
+# Move to examples folder
 cd examples
-```
 
-#### 2.2 run link command
-
-```
+# Link the library
 npm run link:lib
 ```
+
+## Why Use X Layer for Cross-Chain Operations?
+
+X Layer offers several advantages for developers building cross-chain applications:
+
+- **Speed**: Bridge transactions complete in seconds instead of minutes
+- **Cost**: Significantly lower gas fees compared to Ethereum mainnet
+- **Security**: Secured by zero-knowledge proofs
+- **Compatibility**: Full EVM compatibility for seamless deployment
+- **Integration**: Part of the expanding AggLayer ecosystem
+
+## Support & Resources
+
+For additional support or resources:
+
+- Visit our [developer documentation](https://www.okx.com/xlayer/docs/users/welcome/about-x-layer)
+- Join our [Discord community](https://discord.gg/eE8Q6q9Vx3)
+- Follow us on [Twitter](https://twitter.com/xlayerofficial)
+
+## Contribution
+
+We welcome contributions from the community! If you have suggestions or improvements for these examples, please submit a pull request.

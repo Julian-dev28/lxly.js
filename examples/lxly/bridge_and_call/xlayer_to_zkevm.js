@@ -3,18 +3,18 @@ const Web3 = require('web3');
 
 const execute = async () => {
     const client = await getLxLyClient();
-    
+
     // X Layer to zkEVM
     const sourceNetwork = 196;
     const destinationNetwork = 1101;
-    
+
     // Use ETH token
     const token = "0x0000000000000000000000000000000000000000";
-    
+
     // Amount to bridge (0.1 ETH)
     const web3 = new Web3();
     const amount = web3.utils.toWei('0.2', 'ether');
-    
+
     try {
         const result = await client.bridges[sourceNetwork].bridgeAsset(
             destinationNetwork,  // destination network ID
