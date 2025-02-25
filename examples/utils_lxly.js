@@ -19,22 +19,22 @@ const getLxLyClient = async (network = 'mainnet') => {
     log: true,
     network: network,
     providers: {
-      196: {  // X Layer
-        provider: new HDWalletProvider([config.user1.privateKey], config.configuration[196].rpc),
+      3: {  // X Layer
+        provider: new HDWalletProvider([config.user1.privateKey], config.configuration[3].rpc),
         configuration: {
-          bridgeAddress: config.configuration[196].bridgeAddress,
-          bridgeExtensionAddress: config.configuration[196].bridgeExtensionAddress,
+          bridgeAddress: config.configuration[3].bridgeAddress,
+          bridgeExtensionAddress: config.configuration[3].bridgeExtensionAddress,
           isEIP1559Supported: true
         },
         defaultConfig: {
           from: config.user1.address
         }
       },
-      1101: {  // Polygon zkEVM
-        provider: new HDWalletProvider([config.user1.privateKey], config.configuration[1101].rpc),
+      1: {  // Polygon zkEVM
+        provider: new HDWalletProvider([config.user1.privateKey], config.configuration[1].rpc),
         configuration: {
-          bridgeAddress: config.configuration[1101].bridgeAddress,
-          bridgeExtensionAddress: config.configuration[1101].bridgeExtensionAddress,
+          bridgeAddress: config.configuration[1].bridgeAddress,
+          bridgeExtensionAddress: config.configuration[1].bridgeExtensionAddress,
           isEIP1559Supported: true
         },
         defaultConfig: {

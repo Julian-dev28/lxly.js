@@ -11,13 +11,13 @@ if (env.error) {
 module.exports = {
     network: process.env.NETWORK || 'mainnet',
     configuration: {
-        196: {  // X Layer
+        3: {  // X Layer
             rpc: process.env.NETWORK_196_RPC || 'https://xlayerrpc.okx.com',
             bridgeAddress: process.env.NETWORK_196_BRIDGE || '0x2a3DD3EB832aF982ec71669E178424b10Dca2EDe',
             bridgeExtensionAddress: process.env.NETWORK_196_BRIDGE_EXTENSION || '0x64B20Eb25AEd030FD510EF93B9135278B152f6a6',
             isEIP1559Supported: true
         },
-        1101: {  // Polygon zkEVM
+        1: {  // Polygon zkEVM
             rpc: process.env.NETWORK_1101_RPC || 'https://zkevm-rpc.com',
             bridgeAddress: process.env.NETWORK_1101_BRIDGE || '0x2a3DD3EB832aF982ec71669E178424b10Dca2EDe',
             bridgeExtensionAddress: process.env.NETWORK_1101_BRIDGE_EXTENSION || '0x64B20Eb25AEd030FD510EF93B9135278B152f6a6',

@@ -3,9 +3,9 @@ const { getLxLyClient, tokens, configuration, from, to } = require('../../utils_
 const execute = async () => {
     const client = await getLxLyClient();
 
-    const bridgeTransactionHash = "0xdb79ee3b309571d741f6ad59cc8f06efd5cb3654aa805d54bfa5d4d731cb7c71";
-    const sourceNetworkId = 196;    // X Layer
-    const destinationNetworkId = 1101;  // Polygon zkEVM
+    const bridgeTransactionHash = "0x2a4aad2453465e5b632e93c769b3b5ca997e5b11056202485c32324b6c399676";
+    const sourceNetworkId = 3;    // X Layer
+    const destinationNetworkId = 1;  // Polygon zkEVM
 
     try {
         // Get the bridge transaction data first
