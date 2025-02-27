@@ -14,7 +14,9 @@ const execute = async () => {
 
     // The transaction hash from the initial bridging operation
     // This transaction happened on the source network (X Layer)
-    const bridgeTransactionHash = "0x2a4aad2453465e5b632e93c769b3b5ca997e5b11056202485c32324b6c399676";
+    const bridgeTransactionHash = "0x9f0a49904f706f055117a81d0451cd17e7f1f2be7ebcb22767a9a1e6453ecbc9";
+    // 0xdb79ee3b309571d741f6ad59cc8f06efd5cb3654aa805d54bfa5d4d731cb7c71
+    //  0x2a4aad2453465e5b632e93c769b3b5ca997e5b11056202485c32324b6c399676
     const sourceNetworkId = 3;    // X Layer (where the bridge tx was initiated)
     const destinationNetworkId = 1;  // Polygon zkEVM (where we'll claim the assets)
 
@@ -32,16 +34,20 @@ const execute = async () => {
             bridgeData.depositCount,
             sourceNetworkId,
         );
-        console.log("Is Claimed:", isClaimed);
+        console.log("deposit count:", bridgeData.depositCount);
 
         if (isClaimed) {
             console.log("This transaction has already been claimed!");
             return;
         }
 
+        // The entire bridge process in X Layer:
+
+
         // Step 3: Build the Merkle proof needed for claiming
         // This proof demonstrates that the transaction was included in the bridge
         console.log("\nAttempting to build proof for claim...");
+        console.log(bridgeTransactionHash, sourceNetworkId, 0, client.bridgeUtil);
         const proof = await client.bridgeUtil.buildPayloadForClaim(
             bridgeTransactionHash,
             sourceNetworkId,

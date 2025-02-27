@@ -3,7 +3,7 @@ const { getLxLyClient, tokens, configuration, from, to } = require('../../utils_
 const execute = async () => {
     const client = await getLxLyClient();
     // example bridge txn hash from the source chain.
-    const bridgeTransactionHash = "0x6f312627ea607a39f494f49e8b40e9a71c61ad3173a6876f09dd9de7b540c040"; 
+    const bridgeTransactionHash = "0x2a4aad2453465e5b632e93c769b3b5ca997e5b11056202485c32324b6c399676"; 
     // Source Network ID, in this example its 1 since its from cardona.
     const sourceNetworkId = 1;
     // Destination Network ID, in this example its 0 since its to sepolia.

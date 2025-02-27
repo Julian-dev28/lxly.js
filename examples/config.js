@@ -54,14 +54,14 @@ module.exports = {
             isEIP1559Supported: true
         },
     },
-
+    
     // Token address definitions for each network
     // The zero address (0x0000...0000) represents the native token (ETH)
     tokens: {
-        196: {  // X Layer chain ID
+        3: {  // X Layer network ID
             eth: '0x0000000000000000000000000000000000000000'  // ETH on X Layer
         },
-        1101: {  // Polygon zkEVM chain ID
+        1: {  // Polygon zkEVM network ID
             eth: '0x0000000000000000000000000000000000000000'  // ETH on Polygon zkEVM
         }
     },

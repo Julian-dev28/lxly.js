@@ -36,7 +36,7 @@ const execute = async () => {
             from,                // The destination address (receiver of the assets)
             amount,              // Amount to bridge in Wei
             tokens[sourceNetwork].eth, // Token address (zero address for native ETH)
-            false,               // forceUpdateGlobalExitRoot - technical parameter for exit root updates
+            true,               // forceUpdateGlobalExitRoot - technical parameter for exit root updates
             "0x0",               // permitData - used for ERC20 permit functionality, not needed for ETH
             {
                 value: amount,   // The actual ETH value being sent with the transaction
